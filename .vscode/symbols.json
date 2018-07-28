@@ -1,1 +1,1 @@
-{"symbols":{},"files":{"src\\index.ts":"2018-07-27T23:44:29.000Z"}}
+{"symbols":{"ParseData":{"hasNamespace":false,"type":0,"moduleName":"parser","relativePath":"src\\parser"}},"files":{"src\\index.ts":"2018-07-28T20:12:14.291Z","src\\parseUtility.ts":"2018-07-28T19:18:12.067Z","src\\parser.ts":"2018-07-28T20:11:26.738Z"}}
