@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "npm run build:live",
-    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./dist/index.js"
   },
   "repository": {
     "type": "git",
