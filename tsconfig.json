@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     
-    "outDir": "dist",
+    "outDir": "./dist",
     "baseUrl": "src",
     "strict": false,
     "moduleResolution": "node",                                              

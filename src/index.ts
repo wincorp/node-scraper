@@ -5,13 +5,13 @@ import * as moment from "moment"
 import {Downloader} from './downloader'
 import {ParseData} from './parser'
 
-const app = express();
+const app = express(); 
 const port = 8000;
 
 const dd = new Downloader();
 
 // comment for now
-let baseFname = 'dec.2017';
+let baseFname = 'ff-2017.10';
 // const url = "https://www.forexfactory.com/calendar.php?month="+baseFname;
 // const fname = './src/downloads/' + baseFname + '.html';
 // dd.downloadHtml(url, fname)
@@ -25,13 +25,13 @@ const data = pd.parseHtml(html);
 let recs: string = JSON.stringify(data,null,2);
 console.log(recs); 
 
-// fs.writeFile('../data/' + baseFname + '.json', JSON.stringify(data,null,2), 'utf8', function (err) {
-//     if (err) {
-//         return console.log(err);
-//     }
+fs.writeFile('../data/' + baseFname + '.json', JSON.stringify(data,null,2), 'utf8', function (err) {
+    if (err) {
+        return console.log(err);
+    }
 
-//     console.log("The file was saved!");
-// }); 
+    console.log("The file was saved!");
+}); 
 
 
 app.listen(port);
