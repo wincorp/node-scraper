@@ -1,16 +1,22 @@
 import { ScrapeUrl } from './models/scrapeUrl';
+import * as Enumerable from 'node-enumerable';
+ 
 var fs = require('fs');
 var moment = require('moment');
 
 export class ScrapeUrlEx {
-    public static GetScrapeUrls() {
+    public static GetScrapeUrls(): Array<ScrapeUrl> {
         let htmlFile:string = '../data/scrapeUrls.json';
-        return JSON.parse(fs.readFileSync(htmlFile, 'utf8'));
+        let arr = Array<ScrapeUrl>();
+        
+        let z = fs.readFileSync(htmlFile);
+        arr = JSON.parse(z);
+        return arr;    
     }    
 
-    public static GenerateScrapeUrls() {
+    public static GenerateScrapeUrls(): Array<ScrapeUrl> {
         var start = new Date('jan 2007');
-        var urls = [];
+        let urls = Array<ScrapeUrl>();
         const dtNow = new Date();
         var dtBegin = moment(start);
         var dtEnd = moment(new Date());
@@ -25,22 +31,23 @@ export class ScrapeUrlEx {
                 }
             }
             urls.push({
-                url: url,
+                url: url.toLowerCase(),
                 fname: fname
             });
             dtBegin.add({ months: 1 }).format('MMM.YYYY');
         }
-        console.log('done'); 
-        var data = JSON.stringify(urls, null, 4);
-        console.log(data);
-        return data;
+        console.log('done!!'); 
+        // var data = JSON.stringify(urls, null, 4);
+        // console.log(data);
+        return urls;
     }
 
     public static SaveScrapeUrls(urls) {
         let htmlFile:string = '../data/scrapeUrls.json';
+        console.log(urls);
         fs.writeFile(htmlFile, urls, function (err) {
             if (err)
-                return err;
+                return err; 
             else
                 return urls;
         });

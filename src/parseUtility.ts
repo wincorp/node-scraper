@@ -16,7 +16,7 @@ function parseFile(file: string){
     console.log('!! PATH IS: ' +path.parse(file));
     let yyyy=this.parseYearFromFilename(file);
 
-    let html = fs.readFileSync(file, 'utf8'); 
+    let html = fs.readFileSync(file); 
     let scrapeData=this.parseHtml(html, yyyy);
     return scrapeData;
 }

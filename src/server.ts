@@ -2,7 +2,7 @@
 
 // Import everything from express and assign it to the express variable
 import * as express from 'express';
-import * as morgan from 'morgan';
+import * as morgan from 'morgan'; 
    
 // Import Controllers from controllers entry point
 import {WelcomeController} from './controllers';
@@ -19,7 +19,7 @@ app.use('/welcome', WelcomeController);
 app.use('/api/scrapeurl', ScrapeUrlController);
 app.use('/api/scrape', ScrapeController);
 
-console.log("server");
+console.log("server!");
 
 // Serve the application at the given port
 app.listen(port, () => {
