@@ -6,7 +6,7 @@ import { ScrapeUrl } from './../models/scrapeUrl';
 import { ScrapeUrlEx } from './../scrapeUrlEx';
 const fs =  require('fs');
 // const Enumerable = require('node-enumerable');
-import * as Enumerable from 'node-enumerable';
+import * as Enumerable from 'node-enumerable'; 
 
 // Assign router to the express.Router() instance
 const router: Router = Router();
